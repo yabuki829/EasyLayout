@@ -39,3 +39,7 @@ label.layout(left: view.leftAnchor, paddingLeft: 0,
 label.centerY(inView: view)
 ```
 
+
+
+#参考記事
+https://suj9763.medium.com/auto-layout-extension-in-swift-programmatically-fe1e7cca13e5
