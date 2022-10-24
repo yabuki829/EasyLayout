@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 extension UIView{
-    func layout(top: NSLayoutYAxisAnchor? = nil,paddingTop: CGFloat = 0,
+    public func layout(top: NSLayoutYAxisAnchor? = nil,paddingTop: CGFloat = 0,
                 left: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0,
                 right: NSLayoutXAxisAnchor? = nil,paddingRight: CGFloat = 0,
                 bottom: NSLayoutYAxisAnchor? = nil,paddingBottom: CGFloat = 0) {
@@ -27,7 +27,7 @@ extension UIView{
 
        
     }
-    func addSize(width: CGFloat? = nil,height: CGFloat? = nil){
+    public func addSize(width: CGFloat? = nil,height: CGFloat? = nil){
         self.translatesAutoresizingMaskIntoConstraints = false
         if let width = width {
             widthAnchor.constraint(equalToConstant: width).isActive = true
@@ -37,13 +37,13 @@ extension UIView{
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
-    func center(inView view: UIView) {
+    public func center(inView view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
-    func centerX(inView view: UIView, topAnchor: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat? = nil) {
+    public func centerX(inView view: UIView, topAnchor: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat? = nil) {
         self.translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
@@ -52,7 +52,7 @@ extension UIView{
         }
     }
 
-    func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingleft: CGFloat? = nil, constant: CGFloat? = 0) {
+    public func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingleft: CGFloat? = nil, constant: CGFloat? = 0) {
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant!).isActive = true
 
         if let leftAnchor = leftAnchor, let padding = paddingleft {
@@ -60,7 +60,7 @@ extension UIView{
         }
     }
     
-    func removeConstraint(){
+    public func removeConstraint(){
         removeConstraints(constraints)
     }
 }
