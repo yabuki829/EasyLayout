@@ -18,11 +18,16 @@ label.center(inView: view)
 
 ## 制約をつける
 ```
-label.layout(top: view.topAnchor, paddingTop: 0,
+label.constrains(top: view.topAnchor, paddingTop: 0,
             left: view.leftAnchor, paddingLeft: 0,
             right: view.rightAnchor, paddingRight: 0,
             bottom: view.bottomAnchor, paddingBottom: 0)
 ``` 
+
+## width,height
+```
+label.sizing(height:200,width:200)
+```
 
 ## X軸の中央
 ``` 
@@ -41,5 +46,5 @@ label.centerY(inView: view)
 
 
 
-#参考記事
+#参考
 https://suj9763.medium.com/auto-layout-extension-in-swift-programmatically-fe1e7cca13e5

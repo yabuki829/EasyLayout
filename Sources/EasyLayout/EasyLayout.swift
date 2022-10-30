@@ -2,10 +2,11 @@ import Foundation
 import UIKit
 
 extension UIView{
-    public func layout(top: NSLayoutYAxisAnchor? = nil,paddingTop: CGFloat = 0,
+    public func constraints(top: NSLayoutYAxisAnchor? = nil,paddingTop: CGFloat = 0,
                 left: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0,
                 right: NSLayoutXAxisAnchor? = nil,paddingRight: CGFloat = 0,
-                bottom: NSLayoutYAxisAnchor? = nil,paddingBottom: CGFloat = 0) {
+                bottom: NSLayoutYAxisAnchor? = nil,paddingBottom: CGFloat = 0,
+                height: CGFloat? = nil,width: CGFloat? = nil) {
     
         self.translatesAutoresizingMaskIntoConstraints = false
 
@@ -25,17 +26,24 @@ extension UIView{
             rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
         }
 
+        if let height = height{
+            sizing(height: height)
+        }
+        if let width = width {
+            sizing(width:width)
+        }
        
     }
-    public func addSize(width: CGFloat? = nil,height: CGFloat? = nil){
+    public func sizing(height: CGFloat? = nil,width: CGFloat? = nil){
         self.translatesAutoresizingMaskIntoConstraints = false
+        if let height = height{
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
         if let width = width {
             widthAnchor.constraint(equalToConstant: width).isActive = true
         }
 
-        if let height = height{
-            heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
+        
     }
     public func center(inView view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
