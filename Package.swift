@@ -13,9 +13,7 @@ let package = Package(
         .library(
             name: "EasyLayout",
             targets: ["EasyLayout"]),
-        .library(
-            name: "TabbarViewController",
-            targets: ["TabbarViewController"])
+       
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -31,6 +29,6 @@ let package = Package(
         .testTarget(
             name: "EasyLayoutTests",
             dependencies: ["EasyLayout"]),
-        .target(name: "TabbarViewController")
+        
     ]
 )
