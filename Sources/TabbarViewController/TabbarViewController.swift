@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import EasyLayout
 
 struct TabColor {
     var textColor:UIColor
